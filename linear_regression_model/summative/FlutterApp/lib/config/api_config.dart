@@ -4,7 +4,7 @@
 class ApiConfig {
   static const String baseUrl = String.fromEnvironment(
     'API_BASE_URL',
-    defaultValue: 'https://linear-regression-api.onrender.com', // replace with your Render URL
+    defaultValue: 'https://garang-buke-summative-regression-lb0z.onrender.com/', // replace with your Render URL
   );
 
   static const String predictPath = '/predict';
