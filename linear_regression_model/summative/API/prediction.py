@@ -169,7 +169,7 @@ app = FastAPI(
     version="1.0.0",
 )
 
-RENDER_URL = "https://linear-regression-api.onrender.com"       # replace with the URL of your Render service
+RENDER_URL = "https://garang-buke-summative-regression-lb0z.onrender.com"       # replace with the URL of your Render service
 ALLOWED_ORIGINS = [
     RENDER_URL,                       # the deployed service itself (for example a web page served from Render)
     "http://localhost:5000",          # Flutter web debug server: flutter run -d chrome --web-port 5000

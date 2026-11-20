@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
@@ -42,6 +43,7 @@ class PredictionService {
     try {
       body = jsonDecode(response.body);
     } on FormatException {
+      debugPrint('PREDICT UNREADABLE: code ${response.statusCode} body ${response.body}');
       throw ApiException('The server sent an answer that could not be read (code ${response.statusCode}).');
     }
 
@@ -51,6 +53,7 @@ class PredictionService {
     if (response.statusCode == 422 && body is Map<String, dynamic>) {
       throw ApiException(ErrorFormatter.fromDetail(body['detail']));
     }
+    debugPrint('PREDICT FAILED: code ${response.statusCode} body ${response.body}');
     throw ApiException('The server returned an unexpected answer (code ${response.statusCode}). Please try again.');
   }
 }
